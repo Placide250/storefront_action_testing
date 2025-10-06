@@ -29,19 +29,30 @@ jobs:
     
     - name: Run all unit tests
       run: npm test
+      id: all-tests
     
     - name: Run tests with coverage
       run: npm run test:coverage
+      id: coverage-tests
     
-    - name: Run specific mock test
-      run: npx jest --testNamePattern="should send both email and SMS when creating order"
+    - name: Run mock-specific tests
+      run: npm run test:mock
+      id: mock-tests
     
-    - name: Run specific stub test  
-      run: npx jest --testNamePattern="should calculate total using stubbed product prices"
+    - name: Run stub-specific tests
+      run: npm run test:stub  
+      id: stub-tests
     
-    - name: Upload coverage reports
-      uses: codecov/codecov-action@v3
-      with:
-        file: ./coverage/lcov.info
-        flags: unittests
-        name: codecov-umbrella
+    - name: Run basic functionality tests
+      run: npm run test:basic
+      id: basic-tests
+    
+    - name: Test Results Summary
+      run: |
+        echo "✅ All tests completed successfully!"
+        echo "📊 Test Categories Executed:"
+        echo "   - All Unit Tests"
+        echo "   - Mock Tests" 
+        echo "   - Stub Tests"
+        echo "   - Basic Functionality Tests"
+        echo "   - Coverage Report Generated"
