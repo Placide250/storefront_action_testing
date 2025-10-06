@@ -4,12 +4,12 @@
   "description": "Unit tests for StoreFront with mocks and stubs",
   "main": "storefront.js",
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "test:mock": "jest --testNamePattern=\"mock\"",
-    "test:stub": "jest --testNamePattern=\"stub\"",
-    "test:basic": "jest --testPathIgnorePatterns=\"storefront.test.js\" --testNamePattern=\"should add product to cart when product is available|should throw error when adding unavailable product|should calculate correct total for multiple items\""
+    "test": "jest tests/",
+    "test:watch": "jest tests/ --watch",
+    "test:coverage": "jest tests/ --coverage",
+    "test:mock": "jest tests/ --testNamePattern=\"mock\"",
+    "test:stub": "jest tests/ --testNamePattern=\"stub\"",
+    "test:basic": "jest tests/ --testNamePattern=\"basic\""
   },
   "devDependencies": {
     "jest": "^29.0.0"
