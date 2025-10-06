@@ -1,0 +1,20 @@
+{
+  "name": "storefront-unit-tests",
+  "version": "1.0.0",
+  "description": "Unit tests for StoreFront with mocks and stubs",
+  "main": "storefront.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:mock": "jest --testNamePattern=\"mock\"",
+    "test:stub": "jest --testNamePattern=\"stub\"",
+    "test:basic": "jest --testPathIgnorePatterns=\"storefront.test.js\" --testNamePattern=\"should add product to cart when product is available|should throw error when adding unavailable product|should calculate correct total for multiple items\""
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  },
+  "keywords": ["testing", "unit-tests", "mocks", "stubs", "jest"],
+  "author": "Placide Nizero",
+  "license": "MIT"
+}
